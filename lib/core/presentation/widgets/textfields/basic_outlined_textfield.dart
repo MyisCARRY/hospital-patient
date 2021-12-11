@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hospital_patient/core/helper/extensions.dart';
 import 'package:hospital_patient/core/helper/images.dart';
 import 'package:hospital_patient/core/helper/widget_ext.dart';
+import 'package:hospital_patient/core/style/border_radiuses.dart';
 import 'package:hospital_patient/core/style/colors.dart';
 import 'package:hospital_patient/core/style/paddings.dart';
 import 'package:hospital_patient/core/style/text_styles.dart';
@@ -21,7 +22,7 @@ class BasicOutlinedTextfield extends StatefulWidget {
     this.autofillHints,
     this.validator,
     this.onChanged,
-    this.autocorrect = true,
+    this.autocorrect = false,
     this.obscure = false,
     this.showObscureSwitch = false,
     Key? key,
@@ -73,7 +74,18 @@ class _BasicOutlinedTextfieldState extends State<BasicOutlinedTextfield> {
           decoration: InputDecoration(
             hintText: widget.hint,
             labelText: widget.label,
-            border: const OutlineInputBorder(),
+            border: const OutlineInputBorder(
+              borderRadius: BorderRadiuses.all12,
+              borderSide: BorderSide(color: CustomColors.blue, width: 2.0),
+            ),
+            focusedBorder: const OutlineInputBorder(
+              borderRadius: BorderRadiuses.all12,
+              borderSide: BorderSide(color: CustomColors.blue, width: 2.0),
+            ),
+            enabledBorder: const OutlineInputBorder(
+              borderRadius: BorderRadiuses.all12,
+              borderSide: BorderSide(color: CustomColors.grey, width: 2.0),
+            ),
             floatingLabelBehavior: FloatingLabelBehavior.always,
             prefixIcon: widget.prefix,
             suffix: widget.showObscureSwitch ? const SizedBox(width: 40.0) : null,

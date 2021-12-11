@@ -10,10 +10,10 @@ CustomTextStyle get roboto => const Roboto();
 class Roboto extends CustomTextStyle {
   const Roboto()
       : super._(
-    fontFamily: _robotoFontName,
-    fontSize: 14.0,
-    color: CustomColors.black,
-  );
+          fontFamily: _robotoFontName,
+          fontSize: 14.0,
+          color: CustomColors.black,
+        );
 }
 
 class CustomTextStyle extends TextStyle {
@@ -43,31 +43,31 @@ class CustomTextStyle extends TextStyle {
     List<String>? fontFamilyFallback,
     String? package,
   }) : super(
-    inherit: inherit,
-    color: color,
-    backgroundColor: backgroundColor,
-    fontSize: fontSize,
-    fontWeight: fontWeight,
-    fontStyle: fontStyle,
-    letterSpacing: letterSpacing,
-    wordSpacing: wordSpacing,
-    leadingDistribution: leadingDistribution,
-    textBaseline: textBaseline,
-    height: height,
-    locale: locale,
-    foreground: foreground,
-    background: background,
-    shadows: shadows,
-    fontFeatures: fontFeatures,
-    decoration: decoration,
-    decorationColor: decorationColor,
-    decorationStyle: decorationStyle,
-    decorationThickness: decorationThickness,
-    debugLabel: debugLabel,
-    fontFamily: fontFamily,
-    fontFamilyFallback: fontFamilyFallback,
-    package: package,
-  );
+          inherit: inherit,
+          color: color,
+          backgroundColor: backgroundColor,
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          fontStyle: fontStyle,
+          letterSpacing: letterSpacing,
+          wordSpacing: wordSpacing,
+          leadingDistribution: leadingDistribution,
+          textBaseline: textBaseline,
+          height: height,
+          locale: locale,
+          foreground: foreground,
+          background: background,
+          shadows: shadows,
+          fontFeatures: fontFeatures,
+          decoration: decoration,
+          decorationColor: decorationColor,
+          decorationStyle: decorationStyle,
+          decorationThickness: decorationThickness,
+          debugLabel: debugLabel,
+          fontFamily: fontFamily,
+          fontFamilyFallback: fontFamilyFallback,
+          package: package,
+        );
 
   // sizes
   CustomTextStyle get s10 => copyWith(fontSize: 10);
@@ -114,6 +114,8 @@ class CustomTextStyle extends TextStyle {
   CustomTextStyle get whiteColor => copyWith(color: CustomColors.white);
 
   CustomTextStyle get blackColor => copyWith(color: CustomColors.black);
+
+  CustomTextStyle get blueColor => copyWith(color: CustomColors.blue);
 
   // heights
   CustomTextStyle get h15 => copyWith(height: 1.5);

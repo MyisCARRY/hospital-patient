@@ -1,1 +1,9 @@
-{}
+{
+  "loginFailure": "Wystąpił problem z logowaniem",
+  "registerFailure": "Wystąpił problem z rejestracją",
+  "hiveDefaultFailure": "Wystąpił problem z lokalną bazą danych",
+  "getPatientsFailure": "Wystąpił problem z pobieraniem pacjentów",
+  "createNewPatientFailure": "Wystąpił problem z dodawniem nowego pacjenta",
+  "getMedicalRecordFailure": "Wystąpił problem z pobieraniem rekordu medycznego",
+  "updateMedicalRecordFailure": "Wystąpił problem z edycją rekordu medycznego"
+}
