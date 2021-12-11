@@ -9,6 +9,7 @@ import 'package:hospital_patient/core/navigator/navigator.dart';
 import 'package:hospital_patient/core/presentation/widgets/notifications.dart';
 import 'package:hospital_patient/features/auth/presentation/blocs/auth_bloc/auth_bloc.dart';
 import 'package:hospital_patient/features/auth/presentation/screens/sign_in_screen.dart';
+import 'package:hospital_patient/features/home/presentation/screens/home_screen.dart';
 import 'package:hospital_patient/generated/l10n.dart';
 import 'package:hospital_patient/injection_container.dart';
 
@@ -56,7 +57,7 @@ class _MyAppState extends State<MyApp> {
           bloc: _authBloc,
           listener: (BuildContext context, AuthState state) {
             state.map(
-              authenticated: (_) {}, // TODO(Piotr): add going to home screen
+              authenticated: (_) => const HomeScreen().setAsBaseScreen(),
               unauthenticated: (_) => const SignInScreen().setAsBaseScreen(),
               error: (state) => Notifications.error(failure: state.failure),
             );

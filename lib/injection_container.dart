@@ -4,13 +4,14 @@ import 'package:get_it/get_it.dart';
 import 'package:hospital_patient/app_config.dart';
 import 'package:hospital_patient/features/auth/injection_container.dart';
 import 'package:hospital_patient/features/hive/injection_container.dart';
+import 'package:hospital_patient/features/home/injection_container.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 final sl = GetIt.instance;
 
 const globalDio = 'global';
 
-class InjectionContainer extends Injector with HiveInjector, AuthInjector {}
+class InjectionContainer extends Injector with HiveInjector, AuthInjector, HomeInjector {}
 
 abstract class Injector {
   @mustCallSuper
