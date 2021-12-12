@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hospital_patient/core/helper/widget_ext.dart';
 import 'package:hospital_patient/core/navigator/navigator.dart';
 import 'package:hospital_patient/core/presentation/appbars/title_appbar.dart';
 import 'package:hospital_patient/core/presentation/widgets/custom_error_widget.dart';
 import 'package:hospital_patient/core/presentation/widgets/custom_loading_widget.dart';
 import 'package:hospital_patient/core/style/colors.dart';
+import 'package:hospital_patient/features/auth/presentation/blocs/auth_bloc/auth_bloc.dart';
 import 'package:hospital_patient/features/home/presentation/blocs/get_medical_record_bloc/get_medical_record_bloc.dart';
 import 'package:hospital_patient/features/home/presentation/widgets/medical_record_content.dart';
 import 'package:hospital_patient/injection_container.dart';
@@ -43,6 +45,15 @@ class _HomeScreenState extends State<HomeScreen> {
         context,
         title: "Medical record",
         showLeading: false,
+        actions: [
+          InkWell(
+            onTap: () => sl<AuthBloc>().add(AuthEvent.signOut()),
+            child: const Icon(
+              Icons.logout,
+              color: CustomColors.blue,
+            ),
+          ).noSplash(),
+        ],
       ),
       body: BlocBuilder(
         bloc: _medicalRecordBloc,
